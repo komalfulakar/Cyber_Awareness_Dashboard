@@ -1,167 +1,173 @@
-// Check whether the Chart.js library is loaded
-if (typeof Chart !== "undefined") {
+// Total survey statistics
+document.getElementById("totalRespondents").textContent = "16";
+document.getElementById("totalInstitutions").textContent = "3";
+document.getElementById("trainingRequired").textContent = "25%";
+document.getElementById("digitalUsers").textContent = "100%";
 
-    // 1. Digital Technology Usage
-    const technologyCanvas = document.getElementById("technologyChart");
 
-    if (technologyCanvas) {
-        new Chart(technologyCanvas, {
-            type: "bar",
+// Chart 1: Digital Technology Usage
+new Chart(document.getElementById("technologyChart"), {
+    type: "bar",
 
-            data: {
-                labels: ["Daily", "3 Times/Week", "Occasionally", "Rarely"],
+    data: {
+        labels: [
+            "Daily",
+            "3 Times a Week",
+            "Occasionally",
+            "Rarely"
+        ],
 
-                datasets: [{
-                    label: "Illustrative responses",
-                    data: [60, 20, 15, 5],
-                    backgroundColor: "#38bdf8",
-                    borderRadius: 6
-                }]
+        datasets: [{
+            label: "Number of Academicians",
+            data: [11, 1, 2, 2],
+            backgroundColor: "#38bdf8",
+            borderRadius: 6
+        }]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
             },
-
-            options: {
-                responsive: true,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: "Preview only – sample figures, not survey results"
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+            title: {
+                display: true,
+                text: "Responses: 16"
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 1
                 }
             }
-        });
+        }
     }
+});
 
 
-    // 2. Cybersecurity Confidence
-    const confidenceCanvas = document.getElementById("confidenceChart");
+// Chart 2: Cybersecurity Confidence
+new Chart(document.getElementById("confidenceChart"), {
+    type: "doughnut",
 
-    if (confidenceCanvas) {
-        new Chart(confidenceCanvas, {
-            type: "doughnut",
+    data: {
+        labels: [
+            "Very Confident",
+            "Somewhat Confident",
+            "Not Confident",
+            "Need Training",
+            "Multiple Selections"
+        ],
 
-            data: {
-                labels: [
-                    "Very Confident",
-                    "Somewhat Confident",
-                    "Not Confident",
-                    "Need Training"
-                ],
+        datasets: [{
+            data: [2, 12, 0, 1, 1],
 
-                datasets: [{
-                    data: [20, 35, 25, 20],
-                    backgroundColor: [
-                        "#2563eb",
-                        "#38bdf8",
-                        "#f59e0b",
-                        "#ef4444"
-                    ]
-                }]
-            },
+            backgroundColor: [
+                "#2563eb",
+                "#38bdf8",
+                "#94a3b8",
+                "#ef4444",
+                "#a78bfa"
+            ]
+        }]
+    },
 
-            options: {
-                responsive: true,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: "Preview only – sample figures, not survey results"
-                    }
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: "Responses: 16"
+            }
+        }
+    }
+});
+
+
+// Chart 3: Cybersecurity Training Experience
+new Chart(document.getElementById("trainingChart"), {
+    type: "pie",
+
+    data: {
+        labels: [
+            "Recently Trained",
+            "Trained Long Ago",
+            "Awareness Sessions Only",
+            "Never Trained"
+        ],
+
+        datasets: [{
+            data: [1, 8, 3, 4],
+
+            backgroundColor: [
+                "#16a34a",
+                "#2563eb",
+                "#f59e0b",
+                "#ef4444"
+            ]
+        }]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: "Responses: 16"
+            }
+        }
+    }
+});
+
+
+// Chart 4: Preferred Cybersecurity Training Topics
+new Chart(document.getElementById("topicsChart"), {
+    type: "bar",
+
+    data: {
+        labels: [
+            "Basic Cyber Security",
+            "Safe Internet and Email",
+            "Phishing Prevention",
+            "Mobile and Computer Security",
+            "Data Privacy",
+            "Cybercrime Reporting",
+            "AI Safety",
+            "Digital Forensics"
+        ],
+
+        datasets: [{
+            label: "Number of Selections",
+            data: [13, 14, 7, 8, 4, 5, 6, 2],
+            backgroundColor: "#0ea5e9",
+            borderRadius: 6
+        }]
+    },
+
+    options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+
+        plugins: {
+            title: {
+                display: true,
+                text: "Total Respondents: 16"
+            }
+        },
+
+        scales: {
+            x: {
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 1
                 }
             }
-        });
+        }
     }
-
-
-    // 3. Cybersecurity Training Experience
-    const trainingCanvas = document.getElementById("trainingChart");
-
-    if (trainingCanvas) {
-        new Chart(trainingCanvas, {
-            type: "pie",
-
-            data: {
-                labels: [
-                    "Recently Trained",
-                    "Trained Long Ago",
-                    "Awareness Sessions Only",
-                    "Never Trained"
-                ],
-
-                datasets: [{
-                    data: [15, 20, 25, 40],
-                    backgroundColor: [
-                        "#16a34a",
-                        "#2563eb",
-                        "#f59e0b",
-                        "#ef4444"
-                    ]
-                }]
-            },
-
-            options: {
-                responsive: true,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: "Preview only – sample figures, not survey results"
-                    }
-                }
-            }
-        });
-    }
-
-
-    // 4. Preferred Cybersecurity Training Topics
-    const topicsCanvas = document.getElementById("topicsChart");
-
-    if (topicsCanvas) {
-        new Chart(topicsCanvas, {
-            type: "bar",
-
-            data: {
-                labels: [
-                    "Basic Cyber Security",
-                    "Safe Internet & Email",
-                    "Phishing Prevention",
-                    "Device Security",
-                    "Data Privacy",
-                    "Cybercrime Reporting",
-                    "AI Safety",
-                    "Digital Forensics"
-                ],
-
-                datasets: [{
-                    label: "Illustrative selections",
-                    data: [70, 65, 80, 55, 60, 45, 50, 30],
-                    backgroundColor: "#0ea5e9",
-                    borderRadius: 6
-                }]
-            },
-
-            options: {
-                indexAxis: "y",
-                responsive: true,
-
-                plugins: {
-                    title: {
-                        display: true,
-                        text: "Preview only – sample figures, not survey results"
-                    }
-                },
-
-                scales: {
-                    x: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    }
-
-} else {
-    console.error("Chart.js could not be loaded.");
-}
+});

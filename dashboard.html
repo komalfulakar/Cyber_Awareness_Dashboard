@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Cyber Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">CyberAware</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="findings.html">Findings</a></li>
+            <li><a href="safety.html">Safety Tips</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h1>Cyber Awareness Dashboard</h1>
+
+        <p>
+            This dashboard presents an overview of cybersecurity awareness,
+            digital practices, concerns, and training needs among academicians.
+        </p>
+
+        <p>
+            Survey responses will be represented through statistics and charts.
+        </p>
+    </section>
+
+    <section class="stats-container">
+
+        <div class="stat-card">
+            <h3>Total Respondents</h3>
+            <h2 id="totalRespondents">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <h3>Institutions Covered</h3>
+            <h2 id="totalInstitutions">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <h3>Training Required</h3>
+            <h2 id="trainingRequired">0%</h2>
+        </div>
+
+        <div class="stat-card">
+            <h3>Digital Technology Users</h3>
+            <h2 id="digitalUsers">0%</h2>
+        </div>
+
+    </section>
+
+    <section class="section">
+        <h2>Survey Visualizations</h2>
+
+        <div class="chart-container">
+            <h3>1. Use of Digital Technology</h3>
+            <canvas id="technologyChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>2. Cybersecurity Confidence</h3>
+            <canvas id="confidenceChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>3. Cybersecurity Training Experience</h3>
+            <canvas id="trainingChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>4. Preferred Training Topics</h3>
+            <canvas id="topicsChart"></canvas>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Internship Project 2026 | Softsense Technoserve (India) Pvt. Ltd.</p>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
